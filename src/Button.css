@@ -1,0 +1,8 @@
+.custom-btn {
+    background-color: aqua;
+    color: red;
+    outline:    none    ;
+    border: none    ;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
