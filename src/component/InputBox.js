@@ -12,7 +12,7 @@ function InputBox() {
                 }
     }, [ addNewItem, setValue ]);
 
-    const handleKeyUpEvent = useCallback (
+    const handleChangeEvent = useCallback (
         e => {
             setValue(e.target.value);
         },
