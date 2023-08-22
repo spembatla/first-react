@@ -1,21 +1,19 @@
 import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import TodoItem from './Todoitem';
+import { applyFilter } from '../services/filters';
+import FilteredList from './FilteredList';
 
 function TodoList(props) {
-  const { title, items } = props;
+  const { title, items, addNew, filter, changeFilter, changeStatus } = props;
   const count = items.length;
+  const filteredList = applyFilter(items, filter);
 
   return (
     <div className="todolist">
-      <Header title={title} />
-      <ul className="list-group list-group-flush">
-        {items.map(item => (
-          <TodoItem key={item.id} data={item} />
-        ))}
-      </ul>
-      <Footer count={count} />
+      <Header title={title} addNew={addNew} />
+      <FilteredList items={filteredItems} changeStatus={changeStatus} />
+      <Footer {...{count, filter, changeFilter}} />
     </div>
   );
 }
