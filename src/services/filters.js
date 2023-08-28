@@ -1,3 +1,4 @@
+import { stringInclues } from "../util/common";
 
 export const FILTER_ALL = "all";
 export const FILTER_ACTIVE = "active";
@@ -14,6 +15,12 @@ export function applyFilter(list, filter) {
         default:
             return list;
     }
+}
+
+export function search(list, query) {
+    let q = query.trim().toLowerCase();
+
+    return list.filter(({text}) => stringInclues(text.toLowerCase(), q));
 }
 
 export function getOptions() {
