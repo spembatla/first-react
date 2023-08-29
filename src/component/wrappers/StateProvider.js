@@ -12,7 +12,7 @@ class StateProvider extends Component {
         query: '',
         mode: MODE_CREATE,
         filter: FILTER_ALL,
-        items: getAll(),
+        list: getAll(),
       };
     }
   
@@ -26,9 +26,10 @@ class StateProvider extends Component {
     }
   
     addNew(text) {
-      let updatedList = addToList(this.state.items, { text, completed: false });
+      console.log('add new ==> ', text);
+      let updatedList = addToList(this.state.list, { text, completed: false });
   
-      this.setState({ items: updatedList });
+      this.setState({ list: updatedList });
     }
   
     changeFilter(filter) {
@@ -36,16 +37,16 @@ class StateProvider extends Component {
     }
   
     changeStatus(itemsId, completed) {
-      const updatedList = updateStatus(this.state.items, itemsId, completed);
+      const updatedList = updateStatus(this.state.list, itemsId, completed);
   
-      this.setState({items: updatedList});
+      this.setState({list: updatedList});
     }
 
     changeMode(mode = MODE_NONE) {
       this.setState({mode});
     }
 
-    setSearchQueryy(text) {
+    setSearchQuery(text) {
       this.setState({query: text || ''});
     }
   }

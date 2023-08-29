@@ -8,8 +8,8 @@ function InputBox(props) {
             type="text"
             className="form-control add-todo"
             value={value}
-            onKeyUp = {handleKeyUp}
-            onChange = {handleChange}
+            onKeyUp={handleKeyUp}
+            onChange={handleChange}
             placeholder="Add New"
             />
         );
