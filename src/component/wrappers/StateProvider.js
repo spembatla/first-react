@@ -26,7 +26,6 @@ class StateProvider extends Component {
     }
   
     addNew(text) {
-      console.log('add new ==> ', text);
       let updatedList = addToList(this.state.list, { text, completed: false });
   
       this.setState({ list: updatedList });

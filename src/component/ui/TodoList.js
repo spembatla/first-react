@@ -12,8 +12,6 @@ function TodoList(props) {
   const Count = applyFilter(list, FILTER_ACTIVE).length || 0;
   const items = search(applyFilter(list, filter), query);
 
-  console.log('data ==> ', props);
-
   return (
     <div className='container'>
       <div className='row'>

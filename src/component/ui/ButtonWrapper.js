@@ -6,8 +6,6 @@ export default function ButtonWrapper(props) {
     const isCreateMode = () => mode === MODE_CREATE;
     const isSearchMode = () => mode === MODE_SEARCH;
 
-    console.log('props ', props);
-
     return (
         <div>
             <a title="Add New"
